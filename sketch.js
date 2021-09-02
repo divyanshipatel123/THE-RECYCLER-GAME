@@ -98,12 +98,12 @@ function preload()
 	
    
 	//loading images foe non bio waste
-	non1Img = loadImage('wasteImages/nonBiowasteImage/bottle.png');
-	non2Img = loadImage('wasteImages/nonBiowasteImage/can.png');
-	non3Img = loadImage('wasteImages/nonBiowasteImage/chips.png');
-	non4Img = loadImage('wasteImages/nonBiowasteImage/cup.png');
-	non5Img = loadImage('wasteImages/nonBiowasteImage/plasticBag.png');
-	non6Img = loadImage('wasteImages/nonBiowasteImage/pvc.png');
+	non1Img = loadImage('wasteImages/nonBioWasteImage/bottle.png');
+	non2Img = loadImage('wasteImages/nonBioWasteImage/can.png');
+	non3Img = loadImage('wasteImages/nonBioWasteImage/chips.png');
+	non4Img = loadImage('wasteImages/nonBioWasteImage/cup.png');
+	non5Img = loadImage('wasteImages/nonBioWasteImage/plasticBag.png');
+	non6Img = loadImage('wasteImages/nonBioWasteImage/pvc.png');
    
    // loading e waste images 
 	eWImg1 = loadImage('wasteImages/eWasteImages/battery.png');
