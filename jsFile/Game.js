@@ -11,19 +11,21 @@ class Game{
     }
 
  start(){
-     
+     fill(rgb(76 ,187 ,23));
+     textSize(30)
+     text('THE RECYCLER GAME' , displayWidth/2 - 75 , displayHeight/2 - 300 );
    //background(this.homescreenImg);
    textSize(25);
    fill('black');
-   text('HOW TO PLAY : ',displayWidth/2 - 700, displayHeight/2 - 250 );
-   text('USE ARROW KEYS TO MOVE UP , RIGHT AND LEFT ',displayWidth/2 - 700, displayHeight/2 - 200 );
-   text('YOU HAVE TO COLLECT THE GARBAGE AND SEGREGATE THEM TO THE CATEGORY OF BIO , NON BIO  , AND E WASTE: ',displayWidth/2 - 700, displayHeight/2 - 150 );
-   text('TO COLLECT GARBAGE TOUCH, AND PRESS B IF YOU THINK IT IS  BIO - DEGRADABLE WASTE' ,displayWidth/2 - 700 , displayHeight/2 - 100 );
-   text('PRESS N FOR NON BIO WASTE AND V FOR E WASTE' ,displayWidth/2 - 700 , displayHeight/2 - 50 );
+   text('HOW TO PLAY : ',displayWidth/2 - 700, displayHeight/2 - 200 );
+   text('USE ARROW KEYS TO MOVE UP , RIGHT AND LEFT ',displayWidth/2 - 700, displayHeight/2 - 150 );
+   text('YOU HAVE TO COLLECT THE GARBAGE AND SEGREGATE THEM TO THE CATEGORY OF BIO , NON BIO  , AND E WASTE: ',displayWidth/2 - 700, displayHeight/2 - 100 );
+   text('TO COLLECT GARBAGE TOUCH, AND PRESS B IF YOU THINK IT IS  BIO - DEGRADABLE WASTE' ,displayWidth/2 - 700 , displayHeight/2 - 50 );
+   text('PRESS N FOR NON BIO WASTE AND V FOR E WASTE' ,displayWidth/2 - 700 , displayHeight/2  );
    fill('red');
-   text('(if you will press wrong key one life will be reduced out of the three lives and if all three lives are gone you will loose the game )' ,displayWidth/2 - 700 , displayHeight/2 );
+   text('(if you will press wrong key one life will be reduced out of the three lives and if all three lives are gone you will loose the game )' ,displayWidth/2 - 700 , displayHeight/2 + 50);
    
-   this.playButton.position(displayWidth/2 , displayHeight/2 + 100);
+   this.playButton.position(displayWidth/2 , displayHeight/2 + 150);
    this.playButton.style('color : green');
    this.playButton.style('width', '100px');
    this.playButton.style('height', '50px')
@@ -55,7 +57,7 @@ class Game{
      text('LIVES LEFT : ' + lives ,  camera.position.x - 650, runner.y - 350);
      textSize(25);
      fill('white');
-     text('Level :  '+ LEVEL , camera.position.x - 25, runner.y - 400);
+     text('Level :  '+ LEVEL + ' Village Area' , camera.position.x - 50, runner.y - 400);
 
      createVillageScene();
      
@@ -76,7 +78,7 @@ class Game{
      text('LIVES LEFT : ' + lives ,  camera.position.x - 650, runner.y - 350);
      textSize(25);
      fill('white');
-     text('Level :  '+ LEVEL , camera.position.x - 25, runner.y - 400);
+     text('Level :  '+ LEVEL + '  City Area' , camera.position.x - 50, runner.y - 400);
      
      createCityScene();
    }
@@ -98,7 +100,7 @@ class Game{
      text('LIVES LEFT : ' + lives ,  camera.position.x - 650, runner.y - 350);
      textSize(25);
      fill('white');
-     text('Level :  '+ LEVEL , camera.position.x - 25, runner.y - 400);
+     text('Level :  '+ LEVEL + '  Industrial Area' , camera.position.x - 50, runner.y - 400);
 
      createInsdrialArea();
      
@@ -111,13 +113,7 @@ class Game{
       obstacleGrp.destroyEach();
       if(bioScore >= 20 && nonBioScore>= 20 && eWasteScore >= 20 || bioScore >= 20 && nonBioScore>= 15 && eWasteScore >= 5 && LEVEL === 2 && gameState === 0){
         this.showMessage();
-      }/*else if(bioScore >= 10 && nonBioScore>= 10 && eWasteScore >= 10){
-       textSize(30);
-       fill('black');
-       text('YAY!! you did it, you have completed level one ', displayWidth/2 - 100 , displayHeight/2 -100 );
-       fill('brown');
-       text('"BUT", you can always do better, try to collect more garbage ', displayWidth/2 - 200, displayHeight/2 - 50);
-      }*/else if(bioScore >= 5 || nonBioScore>= 5 || eWasteScore >= 5){
+      }else if(bioScore >= 5 || nonBioScore>= 5 || eWasteScore >= 5){
         textSize(30);
         fill('black');
         text('YAY!! you did it, you have completed the level', displayWidth/2 - 200 , displayHeight/2 -150 );
@@ -158,7 +154,8 @@ class Game{
 
  end(){
   
-   console.log('HELLO WORLD')	
+   console.log('HELLO WORLD' + '  gamestate' + gameState + ' level ' + LEVEL + '  ,levelcomp var ' + levelCompleted);
+    
    
    textSize(25);
    fill('black')
@@ -167,6 +164,8 @@ class Game{
    text('NOW TELL YOUR FIENDS ABOUT WHAT YOU HAVE LEARNT ', displayWidth/2 - 300  , displayHeight/2  -200);
    fill(rgb(1 , 68 , 33))
    text('RECYCLE AND HELP TO SAVE THE PLANET!!', displayWidth/2 - 300 , displayHeight/2 + -50);
+     
+    this.restartGame();
  }
 
  restartGame(){
