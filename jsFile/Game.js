@@ -11,7 +11,7 @@ class Game{
     }
 
  start(){
-     fill(rgb(7 ,55 ,33));
+     fill(rgb(0 ,71 ,49));
      textSize(30)
      text('THE RECYCLER GAME' , displayWidth/2 - 75 , displayHeight/2 - 300 );
    //background(this.homescreenImg);
@@ -142,9 +142,9 @@ class Game{
         runner.y  = 732;
         this.play.hide();
         levelCompleted=false;
-        //bioScore = 0;
-        // nonBioScore = 0;
-        // eWasteScore = 0;  
+         bioScore = 0;
+         nonBioScore = 0;
+         eWasteScore = 0;  
        })
 
     
@@ -182,10 +182,6 @@ class Game{
  restartGame(){
 
   camera.position.y = displayHeight/2;
-
- // textSize(30);
- // fill('red');
- // text( ' YOU LOST , TRY AGAIN' , displayWidth/2 - 50 , camera.position.y + 25);
   
   this.restartLevel.position(displayWidth/2,  displayHeight/2 + 50);
   this.restartLevel.style('color : green');
