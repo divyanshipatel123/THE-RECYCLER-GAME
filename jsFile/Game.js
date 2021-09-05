@@ -142,9 +142,9 @@ class Game{
         runner.y  = 732;
         this.play.hide();
         levelCompleted=false;
-        bioScore = 0;
-        nonBioScore = 0;
-        eWasteScore = 0;  
+        //bioScore = 0;
+        // nonBioScore = 0;
+        // eWasteScore = 0;  
        })
 
     
@@ -155,15 +155,26 @@ class Game{
  end(){
   
    console.log('HELLO WORLD' + '  gamestate' + gameState + ' level ' + LEVEL + '  ,levelcomp var ' + levelCompleted);
-    
+    if(LEVEL === 4 && gameState === 0 && levelCompleted === true && bioScore===0  && nonBioScore ===0 && eWasteScore===0){
+       textSize(25);
+       fill('red');
+       text('You have not collected any garbage ?', displayWidth/2 - 350 , displayHeight/2-300   );
+       fill('black')
+       text( 'Hmm , lets try one more time. PRESS RESTART and Try Again ', displayWidth/2 -350 , displayHeight/2 -250 );
+       text('You can always try to do better , Try Again and Learn something New !!', displayWidth/2 - 350  , displayHeight/2  -200);
+    }else if(bioScore >0  || nonBioScore > 0 || eWasteScore > 0){
+        textSize(25);
+        fill('black')
+    text('YOU DID IT!! YOU HAVE LEARNT HOW TO RECYCLE ', displayWidth/2 - 300 , displayHeight/2-300   );
+    text( 'YOU HAVE TURNED THE WASTE TO RESOURSEFULL AND CREATIVE THINGS ', displayWidth/2 -300 , displayHeight/2 -250 );
+    text('NOW TELL YOUR FIENDS ABOUT WHAT YOU HAVE LEARNT ', displayWidth/2 - 300  , displayHeight/2  -200);
+    fill(rgb(1 , 68 , 33))
+    text('RECYCLE AND HELP TO SAVE THE PLANET!!', displayWidth/2 - 300 , displayHeight/2 + -50);
+        
+     win.play();
+    }
    
-   textSize(25);
-   fill('black')
-   text('YOU DID IT!! YOU HAVE LEARNT HOW TO RECYCLE ', displayWidth/2 - 300 , displayHeight/2-300   );
-   text( 'YOU HAVE TURNED THE WASTE TO RESOURSEFULL AND CREATIVE THINGS ', displayWidth/2 -300 , displayHeight/2 -250 );
-   text('NOW TELL YOUR FIENDS ABOUT WHAT YOU HAVE LEARNT ', displayWidth/2 - 300  , displayHeight/2  -200);
-   fill(rgb(1 , 68 , 33))
-   text('RECYCLE AND HELP TO SAVE THE PLANET!!', displayWidth/2 - 300 , displayHeight/2 + -50);
+   
      
     this.restartGame();
  }
