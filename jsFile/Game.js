@@ -11,9 +11,9 @@ class Game{
     }
 
  start(){
-     textSize(35);
+     textSize(40);
      fill('green');
-     text('THE RECYCLER GAME' , displayWidth/2 - 100 , displayHeight/2 - 400 );
+     text('THE RECYCLER GAME' , displayWidth/2 - 650 , displayHeight/2 - 400 );
    //background(this.homescreenImg);
    textSize(25);
    fill('black');
